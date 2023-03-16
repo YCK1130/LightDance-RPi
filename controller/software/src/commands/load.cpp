@@ -16,7 +16,7 @@
 /*
 "load" help file
 
----- load <Data Type> <Data Path> ----
+usage: load [Data Type] [Data Path(.json)]
 
 load given JSON file to a BIN file ( dancer.dat )
 

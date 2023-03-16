@@ -13,19 +13,17 @@
 
 using namespace std;
 using json = nlohmann::json;
+/*
+"list" help file
 
+
+usage: list
+
+list loaded data from a BIN file ( /data/dancer.dat )
+
+
+*/
 int main(int argc, char *argv[]) {
-    // if (argc != 2) {
-    //     cerr << "Error: missing parameters! (dancerName is needed)" << endl;
-    //     exit(1);
-    // }
-
-    /*
-    in
-    */
-    // string dancerName = argv[1];
-    // string fileName("./data/");
-    // fileName += dancerName + "_DancerData.dat";
     string fileName = string(BASE_PATH) + "data/dancer.dat";
     Player new_dancer;
     if (!restorePlayer(new_dancer, fileName.c_str())) {

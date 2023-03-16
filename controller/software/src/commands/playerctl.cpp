@@ -19,11 +19,18 @@ using namespace std;
 class Play : public Command {
    public:
     Play() : Command() {
+        addFlag(" ",
+                "\ndefault format:\n\tplay [-s/--sec] [<start> [end]] [-d/--delay <delay time>]\n");
         addFlag("-h", "help");
-        addFlag("-t", "ms");
+        addFlag("--help", "help");
+        addFlag("-d", "delay in ms,format: play -d <delay time>");
+        addFlag("--delay", "ms,format: play --delay <delay time>");
+        addFlag("-s", "change to sec, format: play -s <start> <end>");
+        addFlag("--sec", "format: play --sec <start> <end>");
     }
     int execute(int argc, char* argv[]) {
-        if (cmdOptionExists(argv, argv + argc, "-h")) {
+        if (cmdOptionExists(argv, argv + argc, "-h") ||
+            cmdOptionExists(argv, argv + argc, "--help")) {
             help();
             return 0;
         }
